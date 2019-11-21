@@ -4,11 +4,23 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void main(void) {
-	char str[30]="happy C programing";
+int main(void) {
+	int i;
+	char input[100];
+	FILE* fp;
 	
-	printf("string lenghth \"%s\": %i",str,strlen(str));
+	fp=fopen("sample.txt","r");
+	for (i=0;i<3;i++)
+	{
+		//printf("input a string: ");
+		//scanf("%s",input);
+		fscanf(fp, "%s", input);
+		printf("%s\n", input);
+	}
 	
+	fclose(fp);
+	return 0;
 }
+
 
 
